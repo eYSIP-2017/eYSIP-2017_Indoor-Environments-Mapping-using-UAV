@@ -1,0 +1,20 @@
+<launch>
+    <arg name="cloud_input_ns" value="/realsense" />
+    <arg name="cam_info_subfolder" value="$(arg cloud_input_ns)/camera"/> 
+
+     <!-- Nodelet manager for this pipeline -->
+    <node pkg="nodelet" type="nodelet" args="manager" name="depth_transforms_manager" output="screen"/>
+
+     <!-- Get the scene depth image transformed to the rgb camera frame -->
+    <node pkg="nodelet" type="nodelet" name="transform_scenedepth2rgb" args="load depth_image_proc/register depth_transforms_manager">
+        <!-- Input: RGB camera calibration and metadata. (sensor_msgs/CameraInfo) -->
+        <remap from="rgb/camera_info" to="$(arg cam_info_subfolder)/color/camera_info"/>
+        <!-- Input: Depth camera calibration and metadata. (sensor_msgs/CameraInfo) -->
+        <remap from="depth/camera_info" to="$(arg cam_info_subfolder)/depth/camera_info"/> 
+        <!-- Input: Rectified depth image. (sensor_msgs/Image) -->
+        <remap from="depth/image_rect" to="$(arg cam_info_subfolder)/depth/image_raw"/>
+    </node>
+
+    <!-- Publish tf from depth image frame to color image frame -->
+    <node pkg = "tf" type = "static_transform_publisher" name="transform_publisher" args = "-0.016 0 0 0 0 0 depth color 100"/>
+</launch>
