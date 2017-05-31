@@ -45,6 +45,7 @@
 #include <Eigen/Geometry>
 #include <eigen_conversions/eigen_msg.h>
 #include <depth_image_proc/depth_traits.h>
+#include <cv_bridge/cv_bridge.h>
 
 namespace depth_image_proc {
 
@@ -133,7 +134,7 @@ void RegisterNodelet::connectCb()
   }
 }
 
-void RegisterNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_image_msg,
+void RegisterNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_image_msg_in,
                               const sensor_msgs::CameraInfoConstPtr& depth_info_msg,
                               const sensor_msgs::CameraInfoConstPtr& rgb_info_msg)
 {
@@ -142,6 +143,7 @@ void RegisterNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_image_msg,
   rgb_model_  .fromCameraInfo(rgb_info_msg);
 
   // Query tf2 for transform from (X,Y,Z) in depth camera frame to RGB camera frame
+  sensor_msgs::ImageConstPtr depth_image_msg = depth_image_msg_in;
   Eigen::Affine3d depth_to_rgb;
   try
   {
@@ -169,6 +171,8 @@ void RegisterNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_image_msg,
   registered_msg->height = resolution.height;
   registered_msg->width  = resolution.width;
   // step and data set in convert(), depend on depth data type
+
+  depth_image_msg = cv_bridge::toCvShare(depth_image_msg, enc::TYPE_16UC1)->toImageMsg();
 
   if (depth_image_msg->encoding == enc::TYPE_16UC1)
   {

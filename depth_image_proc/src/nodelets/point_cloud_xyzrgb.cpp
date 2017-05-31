@@ -105,18 +105,18 @@ void PointCloudXyzrgbNodelet::onInit()
 
   // Read parameters
   int queue_size;
-  private_nh.param("queue_size", queue_size, 5);
+  private_nh.param("queue_size", queue_size, 100);
   bool use_exact_sync;
   private_nh.param("exact_sync", use_exact_sync, false);
 
   // Synchronize inputs. Topic subscriptions happen on demand in the connection callback.
   if (use_exact_sync)
-  {
+  {  
     exact_sync_.reset( new ExactSynchronizer(ExactSyncPolicy(queue_size), sub_depth_, sub_rgb_, sub_info_) );
     exact_sync_->registerCallback(boost::bind(&PointCloudXyzrgbNodelet::imageCb, this, _1, _2, _3));
   }
   else
-  {
+  {  
     sync_.reset( new Synchronizer(SyncPolicy(queue_size), sub_depth_, sub_rgb_, sub_info_) );
     sync_->registerCallback(boost::bind(&PointCloudXyzrgbNodelet::imageCb, this, _1, _2, _3));
   }
@@ -155,15 +155,15 @@ void PointCloudXyzrgbNodelet::connectCb()
   }
 }
 
-void PointCloudXyzrgbNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_msg,
+void PointCloudXyzrgbNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_msg_in,
                                       const sensor_msgs::ImageConstPtr& rgb_msg_in,
                                       const sensor_msgs::CameraInfoConstPtr& info_msg)
 {
   // Check for bad inputs
-  if (depth_msg->header.frame_id != rgb_msg_in->header.frame_id)
+  if (depth_msg_in->header.frame_id != rgb_msg_in->header.frame_id)
   {
     NODELET_ERROR_THROTTLE(5, "Depth image frame id [%s] doesn't match RGB image frame id [%s]",
-                           depth_msg->header.frame_id.c_str(), rgb_msg_in->header.frame_id.c_str());
+                           depth_msg_in->header.frame_id.c_str(), rgb_msg_in->header.frame_id.c_str());
     return;
   }
 
@@ -172,6 +172,7 @@ void PointCloudXyzrgbNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_ms
 
   // Check if the input image has to be resized
   sensor_msgs::ImageConstPtr rgb_msg = rgb_msg_in;
+  sensor_msgs::ImageConstPtr depth_msg = depth_msg_in;
   if (depth_msg->width != rgb_msg->width || depth_msg->height != rgb_msg->height)
   {
     sensor_msgs::CameraInfo info_msg_tmp = *info_msg;
@@ -252,7 +253,6 @@ void PointCloudXyzrgbNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_ms
     blue_offset  = 2;
     color_step   = 3;
   }
-
   // Allocate new point cloud message
   PointCloud::Ptr cloud_msg (new PointCloud);
   cloud_msg->header = depth_msg->header; // Use depth image time stamp
@@ -263,6 +263,8 @@ void PointCloudXyzrgbNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_ms
 
   sensor_msgs::PointCloud2Modifier pcd_modifier(*cloud_msg);
   pcd_modifier.setPointCloud2FieldsByString(2, "xyz", "rgb");
+
+  depth_msg = cv_bridge::toCvShare(depth_msg, enc::TYPE_16UC1)->toImageMsg();
 
   if (depth_msg->encoding == enc::TYPE_16UC1)
   {
@@ -277,7 +279,6 @@ void PointCloudXyzrgbNodelet::imageCb(const sensor_msgs::ImageConstPtr& depth_ms
     NODELET_ERROR_THROTTLE(5, "Depth image has unsupported encoding [%s]", depth_msg->encoding.c_str());
     return;
   }
-
   pub_point_cloud_.publish (cloud_msg);
 }
 
