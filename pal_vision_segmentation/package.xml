@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>pal_vision_segmentation</name>
+  <version>1.0.0</version>
+  <description>The pal_vision_segmentation package provides segmentation nodes based on various techniques. Masked image or mask is provided, and can be tuned via dynamic_reconfigure.</description>
+  <maintainer email="bence.magyar@pal-robotics.com">Bence Magyar</maintainer>
+  <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>stereo_image_proc</build_depend> 
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>roscpp</build_depend>
+ 
+  <run_depend>stereo_image_proc</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>roscpp</run_depend>
+
+</package>

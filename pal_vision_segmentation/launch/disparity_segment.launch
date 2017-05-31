@@ -1,0 +1,14 @@
+<launch>
+    
+    <group ns="/disparity_segmentation">
+        <rosparam command="load" file="$(find pal_vision_segmentation)/config/default_tabletop_disparity.yaml" />
+    </group>
+
+    <node pkg="pal_vision_segmentation" type="disparity_segmentation" name="disparity_segmentation">
+        <remap from="image" to="/stereo/left/image_rect_color" />
+        <remap from="disparity_image" to="/stereo/disparity" />
+        <remap from="camera_info" to="/stereo/left/camera_info" />
+    </node>
+
+</launch>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="viewpoint_estimation" type="viewpoint_estimation" name="viewpoint_estimation" output="screen"> 
+
+     <!-- Set the image source for marker detection -->
+     <remap from="/image_raw" to="/ardrone/bottom/image_raw" />
+     
+     <rosparam> 
+      calibration_file: "/home/rishabh/catkin_ws/src/marker_pose_detection/calibrationdata/ost.txt"    
+    </rosparam> 
+  </node> 
+ </launch>
+
+
