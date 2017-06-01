@@ -3,7 +3,7 @@
     <arg name="cam_info_subfolder" value="$(arg cloud_input_ns)/camera"/> 
 
     <!-- Convert to point cloud -->
-    <node pkg="nodelet" type="nodelet" name="pcl_xyzrgb" args="load depth_image_proc/point_cloud_xyzrgb depth_transforms_manager">
+    <node pkg="nodelet" type="nodelet" name="pcl_xyzrgb" args="load depth_image_proc/point_cloud_xyzrgb depth_transforms_manager" output="screen">
         <!-- Input: Rectified color image. -->
         <remap from="rgb/image_rect_color" to="$(arg cam_info_subfolder)/color/image_raw"/> 
         <!-- Input: Camera calibration and metadata. --> 

@@ -6,7 +6,7 @@
     <node pkg="nodelet" type="nodelet" args="manager" name="depth_transforms_manager" output="screen"/>
 
      <!-- Get the scene depth image transformed to the rgb camera frame -->
-    <node pkg="nodelet" type="nodelet" name="transform_scenedepth2rgb" args="load depth_image_proc/register depth_transforms_manager">
+    <node pkg="nodelet" type="nodelet" name="transform_scenedepth2rgb" args="load depth_image_proc/register depth_transforms_manager" output="screen">
         <!-- Input: RGB camera calibration and metadata. (sensor_msgs/CameraInfo) -->
         <remap from="rgb/camera_info" to="$(arg cam_info_subfolder)/color/camera_info"/>
         <!-- Input: Depth camera calibration and metadata. (sensor_msgs/CameraInfo) -->
