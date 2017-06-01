@@ -21,8 +21,11 @@ def callback(data):
 	odom_data.pose.pose = data.pose[quadrotor_index]
 	odom_data.twist.twist = data.twist[quadrotor_index]
 	pub_odom.publish(odom_data)
-	pub_tf.sendTransform((odom_data.pose.pose.position.x, odom_data.pose.pose.position.y, odom_data.pose.pose.position.z), (odom_data.pose.pose.orientation.x, odom_data.pose.pose.orientation.y, odom_data.pose.pose.orientation.z, odom_data.pose.pose.orientation.w), odom_data.header.stamp, 'quadrotor', 'odom')
 
 rospy.Subscriber('/gazebo/model_states', ModelStates, callback)
 
-rospy.spin()
+rate = rospy.Rate(20)
+
+while not rospy.is_shutdown():
+	pub_tf.sendTransform((odom_data.pose.pose.position.x, odom_data.pose.pose.position.y, odom_data.pose.pose.position.z), (odom_data.pose.pose.orientation.x, odom_data.pose.pose.orientation.y, odom_data.pose.pose.orientation.z, odom_data.pose.pose.orientation.w), rospy.Time.now(), 'quadrotor', 'odom')
+	rate.sleep()
