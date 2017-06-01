@@ -59,76 +59,6 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='dummy_model'>
-      <pose frame=''>1 0 0 0 -0 0</pose>
-      <link name='link_1'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>10</mass>
-        </inertial>
-        <visual name='visual_box'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.1 30 30</size>
-            </box>
-          </geometry>
-          <cast_shadows>1</cast_shadows>
-          <laser_retro>100</laser_retro>
-        </visual>
-        <collision name='collision_box'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <max_contacts>250</max_contacts>
-          <geometry>
-            <box>
-              <size>0.1 30 30</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>0.5</mu>
-                <mu2>0.2</mu2>
-                <fdir1>1 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+15</kp>
-                <kd>1e+13</kd>
-                <max_vel>100</max_vel>
-                <min_depth>0.0001</min_depth>
-              </ode>
-            </contact>
-          </surface>
-          <laser_retro>100</laser_retro>
-        </collision>
-        <gravity>1</gravity>
-        <self_collide>1</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <static>0</static>
-    </model>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -564,203 +494,208 @@
       </plugin>
       <pose frame=''>0 0 0.5 0 -0 0</pose>
       <model name='realsense_camera'>
-      <plugin name='realsense_plugin' filename='librealsense_gazebo_plugin.so'/>
-      <pose frame=''>0 0 0.115 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>0.001</mass>
-          <inertia>
-            <ixx>9.108e-05</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>2.51e-06</iyy>
-            <iyz>0</iyz>
-            <izz>8.931e-05</izz>
-          </inertia>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://realsense_camera/meshes/realsense.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.0078 0.13 0.0192</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
+        <plugin name='realsense_plugin' filename='librealsense_gazebo_plugin.so'/>
+        <pose frame=''>0.245 0 0.03 0 -0 0</pose>
+        <link name='link'>
+          <inertial>
+            <mass>0.001</mass>
+            <inertia>
+              <ixx>9.108e-05</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>2.51e-06</iyy>
+              <iyz>0</iyz>
+              <izz>8.931e-05</izz>
+            </inertia>
+            <pose frame=''>0 0 0 0 -0 0</pose>
+          </inertial>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://realsense_camera/meshes/realsense.dae</uri>
+                <scale>1 1 1</scale>
+              </mesh>
+            </geometry>
+          </visual>
+          <collision name='collision'>
+            <laser_retro>0</laser_retro>
+            <max_contacts>10</max_contacts>
+            <pose frame=''>0 0 0 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>0.0078 0.13 0.0192</size>
+              </box>
+            </geometry>
+            <surface>
+              <friction>
                 <ode>
-                  <slip>0</slip>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0</slip1>
+                  <slip2>0</slip2>
                 </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <sensor name='color' type='camera'>
-          <pose frame=''>0 -0.046 0.004 0 -0 0</pose>
-          <camera name='__default__'>
-            <horizontal_fov>1.047</horizontal_fov>
-            <image>
-              <width>640</width>
-              <height>480</height>
-              <format>RGB_INT8</format>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>100</far>
-            </clip>
-            <noise>
-              <type>gaussian</type>
-              <mean>0</mean>
-              <stddev>0.007</stddev>
-            </noise>
-          </camera>
-          <always_on>1</always_on>
-          <update_rate>60</update_rate>
-          <visualize>1</visualize>
-        </sensor>
-        <sensor name='ired1' type='camera'>
-          <pose frame=''>0 -0.06 0.004 0 -0 0</pose>
-          <camera name='__default__'>
-            <horizontal_fov>1.047</horizontal_fov>
-            <image>
-              <width>640</width>
-              <height>480</height>
-              <format>L_INT8</format>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>100</far>
-            </clip>
-            <noise>
-              <type>gaussian</type>
-              <mean>0</mean>
-              <stddev>0.007</stddev>
-            </noise>
-          </camera>
-          <always_on>1</always_on>
-          <update_rate>60</update_rate>
-          <visualize>0</visualize>
-        </sensor>
-        <sensor name='ired2' type='camera'>
-          <pose frame=''>0 0.01 0.004 0 -0 0</pose>
-          <camera name='__default__'>
-            <horizontal_fov>1.047</horizontal_fov>
-            <image>
-              <width>640</width>
-              <height>480</height>
-              <format>L_INT8</format>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>100</far>
-            </clip>
-            <noise>
-              <type>gaussian</type>
-              <mean>0</mean>
-              <stddev>0.007</stddev>
-            </noise>
-          </camera>
-          <always_on>1</always_on>
-          <update_rate>60</update_rate>
-          <visualize>0</visualize>
-        </sensor>
-        <sensor name='depth' type='depth'>
-          <pose frame=''>0 -0.03 0.004 0 -0 0</pose>
-          <camera name='__default__'>
-            <horizontal_fov>1.047</horizontal_fov>
-            <image>
-              <width>640</width>
-              <height>480</height>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>100</far>
-            </clip>
-            <noise>
-              <type>gaussian</type>
-              <mean>0</mean>
-              <stddev>0.007</stddev>
-            </noise>
-          </camera>
-          <always_on>1</always_on>
-          <update_rate>60</update_rate>
-          <visualize>0</visualize>
-        </sensor>
-      </link>
-    </model>
-    <joint name="ar_realsense" type="fixed">
+                <torsional>
+                  <coefficient>1</coefficient>
+                  <patch_radius>0</patch_radius>
+                  <surface_radius>0</surface_radius>
+                  <use_patch_radius>1</use_patch_radius>
+                  <ode>
+                    <slip>0</slip>
+                  </ode>
+                </torsional>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+              </bounce>
+              <contact>
+                <collide_without_contact>0</collide_without_contact>
+                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+                <collide_bitmask>1</collide_bitmask>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0</min_depth>
+                </ode>
+                <bullet>
+                  <split_impulse>1</split_impulse>
+                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                </bullet>
+              </contact>
+            </surface>
+          </collision>
+          <sensor name='color' type='camera'>
+            <pose frame=''>0 -0.046 0.004 0 -0 0</pose>
+            <camera name='__default__'>
+              <horizontal_fov>1.047</horizontal_fov>
+              <image>
+                <width>640</width>
+                <height>480</height>
+                <format>RGB_INT8</format>
+              </image>
+              <clip>
+                <near>0.1</near>
+                <far>100</far>
+              </clip>
+              <noise>
+                <type>gaussian</type>
+                <mean>0</mean>
+                <stddev>0.007</stddev>
+              </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>1</visualize>
+          </sensor>
+          <sensor name='ired1' type='camera'>
+            <pose frame=''>0 -0.06 0.004 0 -0 0</pose>
+            <camera name='__default__'>
+              <horizontal_fov>1.047</horizontal_fov>
+              <image>
+                <width>640</width>
+                <height>480</height>
+                <format>L_INT8</format>
+              </image>
+              <clip>
+                <near>0.1</near>
+                <far>100</far>
+              </clip>
+              <noise>
+                <type>gaussian</type>
+                <mean>0</mean>
+                <stddev>0.007</stddev>
+              </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>0</visualize>
+          </sensor>
+          <sensor name='ired2' type='camera'>
+            <pose frame=''>0 0.01 0.004 0 -0 0</pose>
+            <camera name='__default__'>
+              <horizontal_fov>1.047</horizontal_fov>
+              <image>
+                <width>640</width>
+                <height>480</height>
+                <format>L_INT8</format>
+              </image>
+              <clip>
+                <near>0.1</near>
+                <far>100</far>
+              </clip>
+              <noise>
+                <type>gaussian</type>
+                <mean>0</mean>
+                <stddev>0.007</stddev>
+              </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>0</visualize>
+          </sensor>
+          <sensor name='depth' type='depth'>
+            <pose frame=''>0 -0.03 0.004 0 -0 0</pose>
+            <camera name='__default__'>
+              <horizontal_fov>1.047</horizontal_fov>
+              <image>
+                <width>640</width>
+                <height>480</height>
+              </image>
+              <clip>
+                <near>0.1</near>
+                <far>100</far>
+              </clip>
+              <noise>
+                <type>gaussian</type>
+                <mean>0</mean>
+                <stddev>0.007</stddev>
+              </noise>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>60</update_rate>
+            <visualize>0</visualize>
+          </sensor>
+        </link>
+      </model>
+      <joint name='ar_realsense' type='fixed'>
         <parent>base_link</parent>
         <child>realsense_camera::link</child>
-        <pose>0.0 0.0 0 0.0 0.0 0.0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <axis>
-          <xyz>1.0 0.0 0.0</xyz>
+          <xyz>1 0 0</xyz>
+          <use_parent_model_frame>0</use_parent_model_frame>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
         </axis>
       </joint>
     </model>
     <state world_name='default'>
-      <sim_time>238 372000000</sim_time>
-      <real_time>278 900953766</real_time>
-      <wall_time>1495832277 534316946</wall_time>
-      <iterations>238372</iterations>
-      <model name='dummy_model'>
-        <pose frame=''>1 0.997525 13.5902 -0.066216 0 0</pose>
+      <sim_time>305 434000000</sim_time>
+      <real_time>79 881582546</real_time>
+      <wall_time>1496327068 838384982</wall_time>
+      <iterations>67062</iterations>
+      <model name='House 2'>
+        <pose frame=''>8.02306 0.479501 0 0 0 -1.57295</pose>
         <scale>1 1 1</scale>
-        <link name='link_1'>
-          <pose frame=''>1 0.997525 13.5902 -0.066216 0 0</pose>
+        <link name='link'>
+          <pose frame=''>8.02306 0.479501 0 0 0 -1.57295</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.032501 -0.000626 -0.008982 4.1e-05 0.009638 2.5e-05</acceleration>
-          <wrench>0.325009 -0.006256 -0.089816 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground_plane'>
@@ -774,24 +709,24 @@
         </link>
       </model>
       <model name='quadrotor'>
-        <pose frame=''>-0.020745 -0.000391 0.039994 0 -4e-05 -0.005666</pose>
+        <pose frame=''>-0.020779 -0.000399 0.04 0 0 -0.005712</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose frame=''>-0.020745 -0.000391 0.039994 0 -4e-05 -0.005666</pose>
-          <velocity>-0.001582 9e-06 -0.005845 -0.000231 -0.03955 1e-06</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -14.7 0 -0 0</wrench>
+          <pose frame=''>-0.020779 -0.000399 0.04 0 0 -0.005712</pose>
+          <velocity>-0.001629 1e-05 0.005929 -0.000242 -0.040707 -2e-06</velocity>
+          <acceleration>-5.59289 0.033018 6.37139 -0.771596 -1.32085 -0.000564</acceleration>
+          <wrench>-8.38933 0.049526 9.55708 0 -0 0</wrench>
         </link>
-      </model>
-      <model name='realsense_camera'>
-        <pose frame=''>-0.012193 0.000703 0.003894 -2.99377 -1.57061 2.99877</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
+        <model name='realsense_camera'>
           <pose frame=''>-0.012193 0.000703 0.003894 -2.99377 -1.57061 2.99877</pose>
-          <velocity>-0.000739 0.000106 -0.006119 -0.027247 -0.189473 0</velocity>
-          <acceleration>0 0 -9.8 -2e-06 -5e-06 0.010175</acceleration>
-          <wrench>0 0 -0.603437 0 -0 0</wrench>
-        </link>
+          <scale>1 1 1</scale>
+          <link name='link'>
+            <pose frame=''>0.239217 -0.001884 0.069998 0 -4e-06 -0.005712</pose>
+            <velocity>-0.002953 1.8e-05 0.014642 -0.000309 -0.043907 -1.2e-05</velocity>
+            <acceleration>-9.92309 0.060128 39.5259 -1.72206 0.038277 -0.011227</acceleration>
+            <wrench>-0.009923 6e-05 0.039526 0 -0 0</wrench>
+          </link>
+        </model>
       </model>
       <light name='sun'>
         <pose frame=''>0 0 10 0 -0 0</pose>
@@ -799,10 +734,58 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-1.12596 -0.991384 0.829168 0 0.427643 0.632193</pose>
+        <pose frame=''>1.26405 -4.25222 24.4564 -0 1.47964 -0.079803</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    <model name='House 2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://house_2/meshes/house_2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://house_2/meshes/house_2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://house_2/materials/scripts</uri>
+              <uri>model://house_2/materials/textures</uri>
+              <uri>model://house_1/materials/textures</uri>
+              <name>House_2/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>model://house_1/materials/textures/House_1_Normal.png</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>5.41858 -0.72785 0 0 -0 0</pose>
+    </model>
   </world>
 </sdf>
