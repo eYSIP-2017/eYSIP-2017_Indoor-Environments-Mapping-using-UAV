@@ -169,7 +169,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/rishabh/catkin_ws/src/IndoorEnvironmentMappingUsingUAV/ardrone_simulator_gazebo7/cvg_sim_gazebo/meshes/quadrotor/quadrotor_4.stl</uri>
+              <uri>file://catkin_ws/src/IndoorEnvironmentMappingUsingUAV/ardrone_simulator_gazebo7/cvg_sim_gazebo/meshes/quadrotor/quadrotor_4.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -296,7 +296,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/rishabh/catkin_ws/src/IndoorEnvironmentMappingUsingUAV/ardrone_simulator_gazebo7/cvg_sim_gazebo/meshes/quadrotor/quadrotor_4.dae</uri>
+              <uri>file://catkin_ws/src/IndoorEnvironmentMappingUsingUAV/ardrone_simulator_gazebo7/cvg_sim_gazebo/meshes/quadrotor/quadrotor_4.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -355,7 +355,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/rishabh/catkin_ws/src/IndoorEnvironmentMappingUsingUAV/ardrone_simulator_gazebo7/cvg_sim_gazebo/meshes/sonar_sensor/max_sonar_ez4.dae</uri>
+              <uri>file://catkin_ws/src/IndoorEnvironmentMappingUsingUAV/ardrone_simulator_gazebo7/cvg_sim_gazebo/meshes/sonar_sensor/max_sonar_ez4.dae</uri>
             </mesh>
           </geometry>
           <material>
