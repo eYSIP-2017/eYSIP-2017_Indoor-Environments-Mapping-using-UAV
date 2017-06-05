@@ -22,4 +22,7 @@
 			<param name="RGBD/OptimizeFromGraphEnd" type="string" value="true"/>
 		</node>
 	</group>
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_gazebo_plugin)/rviz/keyboard_mapping.rviz" required="true" />
+
 </launch>
