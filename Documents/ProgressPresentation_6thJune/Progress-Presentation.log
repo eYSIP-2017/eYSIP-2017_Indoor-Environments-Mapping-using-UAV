@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.22)  6 JUN 2017 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.22)  6 JUN 2017 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -955,30 +955,30 @@ Overfull \hbox (12.45042pt too wide) in paragraph at lines 76--76
 
 [4
 
-] <Demo_images/1.png, id=190, 1371.1225pt x 770.88pt>
+] <Demo_images/1.png, id=190, 1445.4pt x 903.375pt>
 File: Demo_images/1.png Graphic file (type png)
-
-<use Demo_images/1.png>
+ <use Demo_images/1.png>
 Package pdftex.def Info: Demo_images/1.png used on input line 81.
-(pdftex.def)             Requested size: 274.21964pt x 154.17326pt.
- [5
+(pdftex.def)             Requested size: 289.07487pt x 180.6718pt.
 
- <./Demo_images/1.png>]
-<Demo_images/2.png, id=225, 1371.1225pt x 770.88pt>
+[5
+
+ <./Demo_images/1.png>] <Demo_images/2.png, id=227, 1445.4pt x 903.375pt>
 File: Demo_images/2.png Graphic file (type png)
- <use Demo_images/2.png>
+
+<use Demo_images/2.png>
 Package pdftex.def Info: Demo_images/2.png used on input line 86.
-(pdftex.def)             Requested size: 274.21964pt x 154.17326pt.
+(pdftex.def)             Requested size: 289.07487pt x 180.6718pt.
+ [6
 
-[6
-
- <./Demo_images/2.png>] <Demo_images/3.png, id=261, 1371.1225pt x 770.88pt>
+ <./Demo_images/2.png>]
+<Demo_images/3.png, id=264, 1445.4pt x 903.375pt>
 File: Demo_images/3.png Graphic file (type png)
-
-<use Demo_images/3.png>
+ <use Demo_images/3.png>
 Package pdftex.def Info: Demo_images/3.png used on input line 91.
-(pdftex.def)             Requested size: 274.21964pt x 154.17326pt.
- [7
+(pdftex.def)             Requested size: 289.07487pt x 180.6718pt.
+
+[7
 
  <./Demo_images/3.png>] [8
 
@@ -1026,10 +1026,10 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on Progress-Presentation.pdf (10 pages, 847651 bytes).
+Output written on Progress-Presentation.pdf (10 pages, 1602646 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 392 compressed objects within 4 object streams
+ 424 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
  30 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
