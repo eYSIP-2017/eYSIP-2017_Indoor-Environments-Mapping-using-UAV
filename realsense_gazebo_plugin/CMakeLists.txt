@@ -27,6 +27,7 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIR}
     ${GAZEBO_INCLUDE_DIRS}
+    ${ADDITIONAL_INCLUDE_DIRS} ${OGRE_INCLUDE_DIRS}/Paging
 )
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
