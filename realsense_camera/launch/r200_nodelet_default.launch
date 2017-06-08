@@ -13,6 +13,7 @@
 
   <param name="$(arg camera)/driver/mode"              type="str"  value="$(arg mode)" />
   <param name="$(arg camera)/driver/color_fps"         type="int"  value="$(arg color_fps)" />
+  <param name="$(arg camera)/driver/enable_pointcloud"   type="bool"   value="true" />
   <!-- Refer to the Wiki http://wiki.ros.org/realsense_camera for list of supported parameters -->
 
   <group ns="$(arg camera)">

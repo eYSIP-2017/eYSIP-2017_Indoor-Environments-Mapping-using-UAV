@@ -6,7 +6,7 @@
      <remap from="/image_raw" to="/ardrone/bottom/image_raw" />
      
      <rosparam> 
-      calibration_file: "/home/rishabh/catkin_ws/src/marker_pose_detection/calibrationdata/ost.txt"    
+      calibration_file: "/home/rishabh/catkin_ws/src/IndoorEnvironmentMappingUsingUAV/marker_pose_detection/calibrationdata/ost.txt"    
     </rosparam> 
   </node> 
  </launch>

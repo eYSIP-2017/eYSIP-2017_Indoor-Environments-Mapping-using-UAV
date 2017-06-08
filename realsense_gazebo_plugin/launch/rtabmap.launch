@@ -7,7 +7,7 @@
 		<node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start --udebug">   
 			<param name="RGBD/OptimizeIterations" type="string" value="50"/>
 			<param name="odom_frame_id" type="string" value="odom"/>
-			<param name="subscribe_dpeth" type="bool" value="true"/>
+			<param name="subscribe_depth" type="bool" value="true"/>
 			<param name="frame_id" type="string" value="quadrotor"/>
 			<param name="approx_sync" type="bool" value="true"/>
 
