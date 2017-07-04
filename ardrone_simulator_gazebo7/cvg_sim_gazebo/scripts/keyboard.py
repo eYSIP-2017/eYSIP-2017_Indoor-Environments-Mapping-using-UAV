@@ -76,6 +76,7 @@ if __name__=="__main__":
 		elif key == ' ':
 			controller.pub_reset.publish(Empty())
 
+		# Ctrl + C to exit the script
 		elif key == '\x03':
 			break
 

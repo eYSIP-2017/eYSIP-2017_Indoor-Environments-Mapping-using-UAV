@@ -35,11 +35,12 @@ rospy.init_node('CameraInfo')
 pub_color_info = rospy.Publisher('/realsense/camera/color/camera_info',CameraInfo,queue_size=1)
 pub_depth_info = rospy.Publisher('/realsense/camera/depth/camera_info',CameraInfo,queue_size=1)
 
-# Publish CameraInfo when an image is recieved, thereby synchronizing the image and info
+# Publish color camera info when an image is recieved, thereby synchronizing the image and info
 def color_callback(color_image):
 	color_cam_info.header = color_image.header
 	pub_color_info.publish(color_cam_info)
 
+# Publish depth camera info when an image is recieved, thereby synchronizing the image and info
 def depth_callback(depth_image):
 	depth_cam_info.header = depth_image.header
 	pub_depth_info.publish(depth_cam_info)	

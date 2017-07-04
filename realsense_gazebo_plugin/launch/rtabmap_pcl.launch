@@ -1,0 +1,17 @@
+<launch>
+	<!-- nodelet manager -->
+	<node pkg="nodelet" type="nodelet" args="manager" name="rtabmap_manager" output="screen"/>
+
+	<!-- nodelet to transform depth and color image to a pointcloud  -->
+	<node pkg="nodelet" type="nodelet" name="rtabmap_pcl_xyzrgb" args="load rtabmap_ros/point_cloud_xyzrgb rtabmap_manager" output="screen">
+        <!-- Input: Color Image  -->
+		<remap from="rgb/image" to="/realsense/camera/color/image_raw"/> 
+        <!-- Input: Camera calibration and metadata.  -->
+        <remap from="rgb/camera_info" to="/realsense/camera/color/camera_info"/>
+        <!-- Input: Depth Image -->
+        <remap from="depth/image" to="/depth_registered/image_rect"/>
+		<param name="approx_sync" type="bool" value="true"/>
+		<param name="max_depth" type="double" value="3.0"/>
+	</node>
+
+</launch>

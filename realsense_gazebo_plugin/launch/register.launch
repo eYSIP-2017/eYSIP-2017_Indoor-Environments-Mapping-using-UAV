@@ -17,4 +17,8 @@
 
     <!-- Publish tf from depth image frame to color image frame -->
     <node pkg = "tf" type = "static_transform_publisher" name="transform_publisher" args = "0 -0.016 0 0 0 0 depth color 50"/>
+
+    
+    <!-- <node name="keyboard" pkg="cvg_sim_gazebo" type="keyboard.py" output="screen"/> -->
+
 </launch>

@@ -10,7 +10,14 @@ find_package(catkin REQUIRED COMPONENTS
     sensor_msgs
     cv_bridge
     rostest
+    genmsg 
+    actionlib_msgs 
+    actionlib 
+    geometry_msgs
 )
+add_action_files(DIRECTORY .action FILES waypoint.action)
+generate_messages(DEPENDENCIES actionlib_msgs geometry_msgs)
+
 find_package(Boost REQUIRED COMPONENTS thread)
 find_package(gazebo REQUIRED)
 

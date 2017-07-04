@@ -1,0 +1,4 @@
+controller_list:
+  - name: fake_quad_base_controller
+    joints:
+      - odom_to_quadrotor

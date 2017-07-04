@@ -9,10 +9,6 @@
             <uri>model://ground_plane</uri>
         </include>
 
-        <include>
-            <uri>model://realsense_camera</uri>
-        </include>
-
         <model name="dummy_model">
             <pose>1.0 0.0 0.0 0.0 0.0 0.0</pose>
             <link name="link_1">
