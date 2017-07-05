@@ -15,6 +15,7 @@ from tf.transformations import *
 
 cur_pose = 0
 
+# actionlib server class
 class NavigateServer():
 	def __init__(self):
 		# start a actionlib server
@@ -75,6 +76,7 @@ class NavigateServer():
 		# set the goal as succeeded
 		self.server.set_succeeded()
 
+# callback to get current pose of the drone
 def get_odom(data):
 	global cur_pose
 	cur_pose = data.pose.pose
