@@ -1,0 +1,15 @@
+LPCXpresso Installation and activation.
+
+1.Sign up: http://lpcxpresso.code-red-tech.com/
+2.Register by giving nececsary information ..valid email is requeired
+email will be received with password..
+
+3.Install LPCXpresso (Download from website or is given in software and drivers folder in Firebird-VI)
+4. To activate:
+	Go to Help-->Product activation --> Create serial number and Activation --> copy serial number
+
+	Sign in: http://lpcxpresso.code-red-tech.com/
+	Click My Registrations --> Enter copied serial number on website --> Click Create and email activation code 
+	activation code will be mailed..check your inbox.
+
+	Go to Help-->Product activation --> Enter Activate Code --> activate --> Full version activated with code limit of 128Kb.  
