@@ -14,6 +14,7 @@ from std_msgs.msg import String
 goal = 0
 curr_pose = 0
 
+# function to initialize move_group node and plan the trajectories for a given goal
 def move_group_interface():
 	# First initialize moveit_commander and rospy.
 	moveit_commander.roscpp_initialize(sys.argv)
@@ -36,6 +37,7 @@ def move_group_interface():
 		feedback.data = ""
 		pub_feedback.publish(feedback)
 
+# callback to get the current pose of the drone
 def get_odom(data):
 	global curr_pose
 	curr_pose = data
