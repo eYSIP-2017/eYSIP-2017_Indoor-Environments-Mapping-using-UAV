@@ -1,8 +1,12 @@
+<!-- launch file to start the main RTAB-Map node -->
 <launch>
+	<!-- static transform publisher from quadrotor to camera frame -->
 	<node pkg = "tf" type = "static_transform_publisher" name="camera_transform_publisher" args = "0.245 0 0.03 -0.5 0.5 -0.5 0.5 quadrotor camera 50"/>
 
+	<!-- static transform publisher from camera to depth-camera frame -->
 	<node pkg = "tf" type = "static_transform_publisher" name="depth_transform_publisher" args = "0 -0.046 0.004 0 0 0 camera depth 50"/>
-
+	
+	<!-- start the rtabmap node -->
 	<group ns="rtabmap">
 		<node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start --udebug">   
 			<param name="RGBD/OptimizeIterations" type="string" value="50"/>
