@@ -91,11 +91,10 @@ contents={\includegraphics{logo}}
 \chapter[Project Tag]{Indoor Environment Mapping Using UAV}
 \section*{Abstract}
 Research in the area of robotic indoor mapping has been active for a very long time. This project aims to solve the problem of autonomous mapping of an indoor environment using an unmanned aerial vehicle. The platform chosen to solve this problem is Robotics Operating System(ROS) and Gazebo simulator. \\
-ROS is an open-source system for controlling robots using a PC. It has various libraries and packages that simplify the task of building a robotic software applications. \\
-Gazebo is a simulator powered with a physics engine, which is used to simulate the real world. It enables setting of parameters like gravity, friction, inertia, etc. to replicate any real world scenario. \\
-The package used for the map building process is RTAB-Map which runs an RGB-D Graph SLAM algorithm based on the global Bayesian loop closure detector. \\
-In simulation, this problem was solved using an Intel Realsense R200 camera mounted on an AR Drone 2.0. \\
-In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, which is controlled manually.
+ROS is an open-source system for controlling robots via PC. It has various libraries and packages that simplify the task of building robotic software applications. \\
+Gazebo is a simulator powered with a physics engine, used to simulate the real world. It enables setting of parameters like gravity, friction, inertia, etc. to replicate any real world scenario. \\
+The package used for map building is RTAB-Map which runs an RGB-D Graph SLAM algorithm based on the global Bayesian loop closure detector. \\
+In simulation, this problem was solved using an Intel Realsense R200 camera mounted on an AR Drone 2.0. In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, which is controlled manually.
 
 \subsection*{Completion status}
 \begin{itemize}
@@ -103,15 +102,16 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 	\item Interfaced Kinect camera with the PC
 	\item Completed manual mapping in the real world
 	\item Made tutorials on the various packages used in the project
+	\item Video explaining the autonomous mapping algorithm used
 \end{itemize}
 
 \section{Hardware Components}
 \begin{itemize}  
   \item Kinect v1.0 (\href{https://en.wikipedia.org/wiki/Kinect#Kinect_for_Xbox_360_.28V1_2010.29}{Specifications})
   
-  \item Firebird VI (-----------Add Specs-------------)
+  \item Firebird VI (\href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/tree/master/Documents/Firebird-VI}{Datasheets and Manuals}, \href{http://www.nex-robotics.com/products/fire-bird-vi-robot/fire-bird-vi-robotic-research-platform.html}{Buy here})
   
-  \item USB to RS-232 Converter (\href{{./datasheet/USB to RS-232 Converter.pdf}}{Datasheet}, \href{http://www.nex-robotics.com/products/usb-interfacing/usb-to-rs-232-converter.html}{Buy})  	
+  \item USB to RS-232 Converter (\href{{./datasheet/USB to RS-232 Converter.pdf}}{Datasheet}, \href{http://www.nex-robotics.com/products/usb-interfacing/usb-to-rs-232-converter.html}{Buy here})  	
 \end{itemize}
 
 \begin{figure}[h]
@@ -146,7 +146,7 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.3]{process}
+	\includegraphics[scale=0.27]{process}
 	\caption{The mapping process}
 \end{figure}
 
@@ -169,44 +169,46 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 			\item The model of the AR Drone is in the URDF format
 			\item But, the model of the Realsense camera is in SDF format
 			\item URDF and SDF formats are incompatible. Hence, one format has to be converted to the other
-			\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Adding%20Realsense%20R200%20camera%20to%20ARDrone%20in%20Gazebo7.pptx}{This} tutorial explains the conversion process
+			\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Adding%20Realsense%20R200%20camera%20to%20ARDrone%20in%20Gazebo7.pdf}{This} tutorial explains the conversion process
 		\end{itemize}
 \end{itemize}
 
+\vspace{.5in}
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.13]{rosgraph}
+	\includegraphics[scale=0.14]{rosgraph}
 	\caption{Output of the rqt\_graph command showing how the nodes communicate with each other}
 \end{figure}
 	
 \subsection*{Generation of Pointclouds}
 \begin{itemize}
 
-	\item Register(Project) the depth image to the frame of the colour image
+	\item Register (i.e. project) the depth image to the frame of the colour image
 		\begin{itemize}
-			\item The realsense camera publishes both RGB and Depth images
+			\item The realsense camera publishes RGB and depth images on topics /realsense/camera/color/image\_raw and /realsense/camera/depth/image\_raw respectively
 			\item But to generate an RGB-D pointcloud, the depth image and the colour image have to be in the same frame.
-			\item The register nodelet of the depth\_image\_proc package is used for registering the depth image to the frame of the colour image
+			\item The register nodelet (i.e., depth\_registered in rqt\_graph) of the depth\_image\_proc package is used for registering the depth image to the frame of the colour image
 			\item Requirements:
 				\begin{itemize}
-					\item Meta-data of the RGB camera
-					\item Meta-data of the depth camera
-					\item Depth Image
-					\item A transform between the frame of the depth camera and that of the colour camera
+					\item Meta-data of the RGB camera (Published on the topic /realsense/camera/color/camera\_info)
+					\item Meta-data of the depth camera (Published on the topic /realsense/camera/depth/camera\_info)
+					\item Depth Image (Published on the topic /realsense/camera/depth/image\_raw)
+					\item A transform between the frame of the depth camera and that of the colour camera (A static transform between color and depth published on the topic /tf)
 				\end{itemize}
-			\item The output of this nodelet is a registered depth image
+			\item The output of this nodelet is a registered depth image (Published on the topic /depth\_registered/image\_rect)
 		\end{itemize}
 	
 	\item Create a pointcloud
 		\begin{itemize}
-			\item The point\_cloud\_xyzrgb nodelet of the rtabmap\_ros package is used to generate a pointcloud which has 7 attributes - 3D co-ordinates, RGB-colour and depth.
+			\item The point\_cloud\_xyzrgb nodelet (i.e., rtabmap\_pcl\_xyzrgb in the rqt\_graph) of the rtabmap\_ros package is used to generate a pointcloud in which each point has 7 attributes - 3D co-ordinates, RGB-colour and depth.
 			\item Requirements:
 				\begin{itemize}
-					\item RGB image
-					\item Registered depth image
-					\item Meta-data of the RGB camera
+					\item RGB image (Published on the topic /realsense/camera/color/image\_raw)
+					\item Registered depth image (Published on the topic /depth\_registered/image\_rect)
+					\item Meta-data of the RGB camera (Published on the topic /realsense/camera/color/camera\_info)
 				\end{itemize}
-			\item The output of this nodelet is a pointcloud.
+			\item The output of this nodelet is a pointcloud (Published on the topic /cloud)
 		\end{itemize}
 		
 \end{itemize}
@@ -229,24 +231,24 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 	\item The map is incrementally built and optimized whenever a loop-closure is detected
 	\item Requirements:
 		\begin{itemize}
-			\item Odometry information
-			\item RGB image
-			\item Metadata of the RGB image
-			\item Registered depth image
-			\item Pointclouds
+			\item Odometry information (Published on the topic /ground\_truth/state)
+			\item RGB image (Published on the topic /realsense/camera/color/image\_raw)
+			\item Metadata of the RGB image (Published on the topic /realsense/camera/color/camera\_info)
+			\item Registered depth image (Published on the topic /depth\_registered/image\_rect)
+			\item Pointclouds (Published on the topic /cloud)
 		\end{itemize}
 	\item The output of this node is an incrementally built map and information about the map
-	\item There are various parameters that can be set to use the node for a wide variety of applications
-	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Using%20RTAB-Map%20for%20mapping%20with%20Kinect.pptx}{This} tutorial explains how to use RTAB-Map for mapping
+	\item There are various parameters that can be set to use the node for a wide variety of applications (More information about these parameters can be found \href{http://wiki.ros.org/rtabmap_ros#rtabmap}{here})
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Using%20RTAB-Map%20for%20mapping%20with%20Kinect.pdf}{This} tutorial explains how to use RTAB-Map for mapping
 
 \end{itemize}
 
-\subsection*{Autonomous Navigation - Frontier-Based Exploration Technique (FBET)}
+\subsection*{Autonomous Mapping - Frontier-Based Exploration Technique (FBET)}
 \begin{itemize}
 	\item Algorithm for Goal generation:
 	\begin{enumerate}
-		\item Receive a Pointcloud
-		\item Convert the Pointcloud to an Octomap
+		\item Receive a Pointcloud (Published on the topic /cloud)
+		\item Convert the Pointcloud to an Octomap 
 		\item Classify cells in the Octomap as free or occupied
 		\item Find frontier cells
 		\begin{itemize}
@@ -264,7 +266,7 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 			\item Distance between the drone and the centroid of the cluster
 		\end{itemize}
 		\item The cluster with the minimum cost is chosen the optimal cluster
-		\item The centroid of the optimal cluster is the new goal to navigate to
+		\item The centroid of the optimal cluster is the new goal to navigate to (This new goal is published on the topic /goal\_autonomous)
 	\end{enumerate}
 	
 	\item Path planning
@@ -272,22 +274,26 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 			\item Package used - MoveIt
 			\item MoveIt is a ROS framework used for motion planning, control and navigation of robotic arms
 			\item By making a few changes, we can use it for planning the path of a quadrotor too
-			\item If it is not possible for MoveIt to generate a path to a goal(Goal is too close to an obstacle), then a feedback mechanism requests the FBET node for a new goal
+			\item If it is not possible for MoveIt to generate a path to a goal(Goal is too close to an obstacle), then a feedback mechanism requests the autonomous\_exploration node for a new goal (The feedback is sent by sending an empty message to the autonomous\_exploration node over the topic /fbet/feedback whenever MoveIt is unable to generate a plan)
 		\end{itemize}
 
 	\item Navigating to the goal
 		\begin{itemize}
-			\item Once a plan has been generated, we use actionlib server-client mechanism along with PID control to navigate through each waypoint of the goal
+			\item Once a plan has been generated, we use actionlib server-client mechanism along with PID control to navigate through each waypoint of the goal (These waypoints are extracted from the topic /move\_group/display\_planned\_path)
 		\end{itemize}
 		
 	\item \href{https://youtu.be/Ow4pZlDPhkY}{This} video explains the mapping process			
 	
 \end{itemize}
 
+\pagebreak
+
 \section{Software and Code}
 \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV}{Github link} for the repository of code
 
 \begin{itemize}
+
+	\item /ardrone\_simulator\_gazebo7/cvg\_sim\_gazebo/scripts/aruco\_land.py - Script to execute landing of the drone on an ArUco marker.
 
 	\item /ardrone\_simulator\_gazebo7/cvg\_sim\_gazebo/scripts/keyboard.py - Script to control the drone manually
 	
@@ -307,22 +313,37 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 	
 	\item /realsense\_gazebo\_plugin/launch/rtabmap\_pcl.launch - Launch nodelet to convert depth and color image to pointcloud
 	
-	\item /realsense\_gazebo\_plugin/launch/fbet.launch - Launch the FBETServer
+	\item /realsense\_gazebo\_plugin/launch/fbet.launch - Launch the autonomous\_exploration node which runs the FBET algorithm
 	
 	\item /move\_it/launch/moveit.launch - Launch the MoveIt! path planner
 	
-	\item /fbet/src/FBETServer.cpp - Code to find goals for autonomous navigation	
+	\item /autonomous\_exploration/src/autonomous\_exploration.cpp - Code to find goals for autonomous navigation	
 	
 	\item /bash\_scripts/keyboard\_mapping.sh - Bash script to launch all necessary packages required for the mapping process
 	
 \end{itemize}
 
-%\pagebreak
+\section{Tutorials}
+\begin{itemize}
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Adding%20Realsense%20R200%20camera%20to%20ARDrone%20in%20Gazebo7.pdf}{Adding Realsense R200 camera to ARDrone in Gazebo7}
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Landing%20Drone%20on%20ArUco%20marker.pdf}{Landing Drone on ArUco marker}
+	
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/OctoMap%20and%20RTAB-Map.pdf}{OctoMap and RTAB-Map}
+	
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Using%20RTAB-Map%20for%20mapping%20with%20Kinect.pdf}{Using RTAB-Map for mapping with Kinect}
+	
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Keyboard%20Mapping.pdf}{Keyboard Mapping}
+	
+	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Autonomous%20Mapping.pdf}{Autonomous Mapping}
+	
+\end{itemize}
+
+\vspace{.5in}
 
 \section{Results and Demo}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.26]{map}
+	\includegraphics[scale=0.28]{map}
 	\caption{Result of manual mapping in simulation}
 \end{figure}
 
@@ -338,17 +359,15 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 
 \href{https://youtu.be/kXyV3OpbWo8}{Demonstration video for autonomous mapping in simulation}
 
+\vspace{1in}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.08]{bot}
 	\caption{Final setup}
 \end{figure}
 
-\section{Future Work}
-	\begin{itemize}
-		\item Autonomous mapping of the real world using a Firebird VI robot or a quadcopter.
-		\item Build a system comprising of two drones/robots where one of them maps the environment autonomously, while the other navigates autonomously in the generated map to perform a simple task.
-	\end{itemize}
+\pagebreak
 
 \begin{figure}[h]
 	\centering
@@ -358,16 +377,11 @@ In the real world, we used a Kinect v1.0 camera mounted on a Firebird VI robot, 
 
 \href{https://youtu.be/IJxsbCbQITg}{Demonstration video for manual mapping of the real world}
 
-\section{Tutorials}
-\begin{itemize}
-	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Adding%20Realsense%20R200%20camera%20to%20ARDrone%20in%20Gazebo7.pptx}{Adding Realsense R200 camera to ARDrone in Gazebo7}
-	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Landing%20Drone%20on%20ArUco%20marler.pptx}{Landing Drone on ArUco marker}
-	
-	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/OctoMap%20and%20RTAB-Map.pptx}{OctoMap and RTAB-Map}
-	
-	\item \href{https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV/blob/master/Documents/Tutorials/Using%20RTAB-Map%20for%20mapping%20with%20Kinect.pptx}{Using RTAB-Map for mapping with Kinect}
-	
-\end{itemize}
+\section{Future Work}
+	\begin{itemize}
+		\item Autonomous mapping of the real world using a Firebird VI robot or a quadcopter.
+		\item Build a system comprising of two drones/robots where one of them maps the environment autonomously, while the other navigates autonomously in the generated map to perform a simple task.
+	\end{itemize}
 
 \section{Bug report and Challenges}
 \begin{itemize}
