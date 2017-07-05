@@ -1,3 +1,4 @@
+<!-- launch file to register the depth image to the color image frame -->
 <launch>
     <arg name="cloud_input_ns" value="/realsense" />
     <arg name="cam_info_subfolder" value="$(arg cloud_input_ns)/camera"/> 

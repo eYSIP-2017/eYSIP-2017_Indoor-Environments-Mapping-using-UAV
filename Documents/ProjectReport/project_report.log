@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.3)  5 JUL 2017 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.3)  5 JUL 2017 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,13 +1006,13 @@ Overfull \hbox (19.26459pt too wide) in paragraph at lines 91--91
 |[]\OT1/cmr/bx/n/24.88 Indoor En-vi-ron-ment Map-ping Us-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 102.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 101.
 
 (c:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
 Package pdftex.def Info: ./images/logo.png  used on input line 112. on input li
@@ -1024,23 +1024,24 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.112   \item F
-               irebird VI (-----------Add Specs-------------) [1
+               irebird VI (\href{https://github.com/eYSIP-2017/eYSIP-2017_In...
+[1
 
 ]
-<./images/circuit.png, id=99, 1386.68062pt x 514.92375pt>
+<./images/circuit.png, id=101, 1386.68062pt x 514.92375pt>
 File: ./images/circuit.png Graphic file (type png)
 <use ./images/circuit.png>
 Package pdftex.def Info: ./images/circuit.png  used on input line 119. on input
  line 119.
 Package pdftex.def Info: Requested size: 346.66931pt x 128.73062pt on input lin
 e 119.
-<./images/process.png, id=102, 797.98125pt x 1090.0725pt>
+<./images/process.png, id=104, 797.98125pt x 1090.0725pt>
 File: ./images/process.png Graphic file (type png)
 <use ./images/process.png>
 Package pdftex.def Info: ./images/process.png  used on input line 149. on input
  line 149.
-Package pdftex.def Info: Requested size: 239.39621pt x 327.02428pt on input lin
-e 149.
+Package pdftex.def Info: Requested size: 215.45781pt x 294.3235pt on input line
+ 149.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1066,306 +1067,355 @@ Package Fancyhdr Warning: \headheight is too small (26.0pt):
 [2 <./images/circuit.png>]
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 163. on input li
-ne 163.
+Package pdftex.def Info: ./images/logo.png  used on input line 169. on input li
+ne 169.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 163.
+e 169.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 163. on input li
-ne 163.
+Package pdftex.def Info: ./images/logo.png  used on input line 169. on input li
+ne 169.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-163.
+169.
  [3 <./images/process.png>]
-<./images/rosgraph.png, id=119, 2768.84438pt x 2180.89781pt>
+<./images/rosgraph.png, id=121, 2768.84438pt x 2180.89781pt>
 File: ./images/rosgraph.png Graphic file (type png)
 <use ./images/rosgraph.png>
-Package pdftex.def Info: ./images/rosgraph.png  used on input line 178. on inpu
-t line 178.
-Package pdftex.def Info: Requested size: 359.9624pt x 283.52667pt on input line
- 178.
+Package pdftex.def Info: ./images/rosgraph.png  used on input line 180. on inpu
+t line 180.
+Package pdftex.def Info: Requested size: 387.63557pt x 305.32361pt on input lin
+e 180.
+
+Overfull \hbox (23.8437pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/12 /re-alsense/-cam-er-a/-col-or/im-age[]raw and /re-alsense/-cam-
+er-a/depth/im-
+ []
+
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 189. on input li
-ne 189.
+Package pdftex.def Info: ./images/logo.png  used on input line 190. on input li
+ne 190.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 189.
+e 190.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 189. on input li
-ne 189.
+Package pdftex.def Info: ./images/logo.png  used on input line 190. on input li
+ne 190.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-189.
- [4 <./images/rosgraph.png>]
-<./images/tftree.png, id=127, 2041.6275pt x 2479.2625pt>
+190.
+[4 <./images/rosgraph.png>]
+Overfull \hbox (26.49864pt too wide) in paragraph at lines 196--197
+[]\OT1/cmr/m/n/12 Depth Im-age (Pub-lished on the topic /re-alsense/-cam-er-a/d
+epth/im-
+ []
+
+
+Overfull \hbox (81.30945pt too wide) in paragraph at lines 208--209
+[]\OT1/cmr/m/n/12 Registered depth im-age (Pub-lished on the topic /depth[]regi
+stered/image[]rect) 
+ []
+
+<./images/tftree.png, id=129, 2041.6275pt x 2479.2625pt>
 File: ./images/tftree.png Graphic file (type png)
 <use ./images/tftree.png>
-Package pdftex.def Info: ./images/tftree.png  used on input line 216. on input 
-line 216.
+Package pdftex.def Info: ./images/tftree.png  used on input line 218. on input 
+line 218.
 Package pdftex.def Info: Requested size: 306.23091pt x 371.87334pt on input lin
-e 216.
-
+e 218.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 227. on input li
-ne 227.
+Package pdftex.def Info: ./images/logo.png  used on input line 229. on input li
+ne 229.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 227.
+e 229.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 227. on input li
-ne 227.
+Package pdftex.def Info: ./images/logo.png  used on input line 229. on input li
+ne 229.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-227.
+229.
 [5]
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 233. on input li
-ne 233.
+Package pdftex.def Info: ./images/logo.png  used on input line 229. on input li
+ne 229.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 233.
+e 229.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 233. on input li
-ne 233.
+Package pdftex.def Info: ./images/logo.png  used on input line 229. on input li
+ne 229.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-233.
+229.
  [6 <./images/tftree.png>]
+Overfull \hbox (9.83969pt too wide) in paragraph at lines 234--235
+[]\OT1/cmr/m/n/12 Odometry in-for-ma-tion (Pub-lished on the topic /ground[]tru
+th/state) 
+ []
+
+
+Overfull \hbox (59.33723pt too wide) in paragraph at lines 237--238
+[]\OT1/cmr/m/n/12 Registered depth im-age (Pub-lished on the topic /depth[]regi
+stered/image[]rect) 
+ []
+
+
+Overfull \hbox (12.07956pt too wide) in paragraph at lines 246--246
+|\OT1/cmr/bx/n/14.4 Autonomous Map-ping - Frontier-Based Ex-plo-ration Tech-
+ []
+
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 272. on input li
-ne 272.
+Package pdftex.def Info: ./images/logo.png  used on input line 256. on input li
+ne 256.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 272.
+e 256.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 272. on input li
-ne 272.
+Package pdftex.def Info: ./images/logo.png  used on input line 256. on input li
+ne 256.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-272.
- [7]
-Overfull \hbox (13.62134pt too wide) in paragraph at lines 292--293
+256.
+[7]
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 290. on input li
+ne 290.
+Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
+e 290.
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 290. on input li
+ne 290.
+Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
+290.
+ [8]
+Overfull \hbox (21.11514pt too wide) in paragraph at lines 296--297
+[]\OT1/cmr/m/n/12 /ardrone[]simulator[]gazebo7/cvg[]sim[]gazebo/scripts/aruco[]
+land.py - Script
+ []
+
+
+Overfull \hbox (13.62134pt too wide) in paragraph at lines 298--299
 []\OT1/cmr/m/n/12 /ardrone[]simulator[]gazebo7/cvg[]sim[]gazebo/scripts/keyboar
 d.py - Script
  []
 
 
-Overfull \hbox (38.07413pt too wide) in paragraph at lines 294--295
+Overfull \hbox (38.07413pt too wide) in paragraph at lines 300--301
 []\OT1/cmr/m/n/12 /ardrone[]simulator[]gazebo7/cvg[]sim[]gazebo/scripts/ardrone
 []get[]odometry.py
  []
 
 
-Overfull \hbox (13.52135pt too wide) in paragraph at lines 296--297
+Overfull \hbox (13.52135pt too wide) in paragraph at lines 302--303
 []\OT1/cmr/m/n/12 /realsense[]gazebo[]plugin/scripts/pub[]camera[]info.py - Pub
 -lish fake depth
  []
 
 
-Overfull \hbox (30.19536pt too wide) in paragraph at lines 304--305
+Overfull \hbox (30.19536pt too wide) in paragraph at lines 310--311
 []\OT1/cmr/m/n/12 /realsense[]gazebo[]plugin/launch/ardrone[]realsense.launch -
  Launch Gazebo7
  []
 
-File: ./images/logo.png Graphic file (type png)
-<use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 307. on input li
-ne 307.
-Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 307.
-File: ./images/logo.png Graphic file (type png)
-<use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 307. on input li
-ne 307.
-Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-307.
-[8]
-Overfull \hbox (1.10596pt too wide) in paragraph at lines 310--311
-[]\OT1/cmr/m/n/12 /realsense[]gazebo[]plugin/launch/fbet.launch - Launch the FB
-ET-Server 
+
+Overfull \hbox (60.72975pt too wide) in paragraph at lines 316--317
+[]\OT1/cmr/m/n/12 /realsense[]gazebo[]plugin/launch/fbet.launch - Launch the au
+-tonomous[]exploration
  []
 
-<./images/map.png, id=162, 1309.89375pt x 647.41875pt>
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 329. on input li
+ne 329.
+Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
+e 329.
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 329. on input li
+ne 329.
+Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
+329.
+[9]
+<./images/map.png, id=176, 1309.89375pt x 647.41875pt>
 File: ./images/map.png Graphic file (type png)
 <use ./images/map.png>
-Package pdftex.def Info: ./images/map.png  used on input line 325. on input lin
-e 325.
-Package pdftex.def Info: Requested size: 340.56435pt x 168.32489pt on input lin
-e 325.
+Package pdftex.def Info: ./images/map.png  used on input line 346. on input lin
+e 346.
+Package pdftex.def Info: Requested size: 366.76776pt x 181.276pt on input line 
+346.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 332. on input li
-ne 332.
+Package pdftex.def Info: ./images/logo.png  used on input line 353. on input li
+ne 353.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 332.
+e 353.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 332. on input li
-ne 332.
+Package pdftex.def Info: ./images/logo.png  used on input line 353. on input li
+ne 353.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-332.
-[9 <./images/map.png>]
-<./images/automap.png, id=170, 973.38657pt x 539.76656pt>
+353.
+ [10 <./images/map.png>]
+<./images/automap.png, id=185, 973.38657pt x 539.76656pt>
 File: ./images/automap.png Graphic file (type png)
 <use ./images/automap.png>
-Package pdftex.def Info: ./images/automap.png  used on input line 335. on input
- line 335.
+Package pdftex.def Info: ./images/automap.png  used on input line 356. on input
+ line 356.
 Package pdftex.def Info: Requested size: 340.6904pt x 188.92113pt on input line
- 335.
-<./images/bot.jpg, id=172, 2552.53625pt x 2048.65375pt>
+ 356.
+<./images/bot.jpg, id=187, 2552.53625pt x 2048.65375pt>
 File: ./images/bot.jpg Graphic file (type jpg)
 <use ./images/bot.jpg>
-Package pdftex.def Info: ./images/bot.jpg  used on input line 343. on input lin
-e 343.
+Package pdftex.def Info: ./images/bot.jpg  used on input line 366. on input lin
+e 366.
 Package pdftex.def Info: Requested size: 204.20708pt x 163.89565pt on input lin
-e 343.
-<./images/botmap.png, id=173, 983.92593pt x 429.10312pt>
+e 366.
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 371. on input li
+ne 371.
+Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
+e 371.
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 371. on input li
+ne 371.
+Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
+371.
+ [11 <./images/automap.png> <./images/bot.jpg>]
+<./images/botmap.png, id=196, 983.92593pt x 429.10312pt>
 File: ./images/botmap.png Graphic file (type png)
 <use ./images/botmap.png>
-Package pdftex.def Info: ./images/botmap.png  used on input line 355. on input 
-line 355.
+Package pdftex.def Info: ./images/botmap.png  used on input line 374. on input 
+line 374.
 Package pdftex.def Info: Requested size: 393.5634pt x 171.6382pt on input line 
-355.
+374.
 
-Overfull \hbox (3.5634pt too wide) in paragraph at lines 355--356
+Overfull \hbox (3.5634pt too wide) in paragraph at lines 374--375
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 361. on input li
-ne 361.
+Package pdftex.def Info: ./images/logo.png  used on input line 393. on input li
+ne 393.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 361.
+e 393.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 361. on input li
-ne 361.
+Package pdftex.def Info: ./images/logo.png  used on input line 393. on input li
+ne 393.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-361.
-[10 <./images/automap.png> <./images/bot.jpg>]
-File: ./images/logo.png Graphic file (type png)
-<use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 379. on input li
-ne 379.
-Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 379.
-File: ./images/logo.png Graphic file (type png)
-<use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 379. on input li
-ne 379.
-Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-379.
- [11 <./images/botmap.png>]
-Overfull \hbox (26.6071pt too wide) in paragraph at lines 398--400
+393.
+[12 <./images/botmap.png>]
+Overfull \hbox (26.6071pt too wide) in paragraph at lines 412--414
 \OT1/cmr/m/n/12 Solution: Oc-tomaps re-quire a lo-cal-iza-tion pro-cess(e.g. he
 c-tor[]mapping)
  []
 
 
-Overfull \hbox (1.07089pt too wide) in paragraph at lines 400--402
+Overfull \hbox (1.07089pt too wide) in paragraph at lines 414--416
 \OT1/cmr/m/n/12 Solution: Two op-tions were avail-able - Wall fol-low-ing, and 
 frontier-
  []
 
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 402. on input li
-ne 402.
+Package pdftex.def Info: ./images/logo.png  used on input line 416. on input li
+ne 416.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 402.
+e 416.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 402. on input li
-ne 402.
+Package pdftex.def Info: ./images/logo.png  used on input line 416. on input li
+ne 416.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-402.
-[12]
+416.
+[13]
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 409. on input li
-ne 409.
+Package pdftex.def Info: ./images/logo.png  used on input line 423. on input li
+ne 423.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 409.
+e 423.
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 409. on input li
-ne 409.
+Package pdftex.def Info: ./images/logo.png  used on input line 423. on input li
+ne 423.
 Package pdftex.def Info: Requested size: 28.45274pt x 30.30254pt on input line 
-409.
- [13]
+423.
+ [14]
 File: ./images/logo.png Graphic file (type png)
 <use ./images/logo.png>
-Package pdftex.def Info: ./images/logo.png  used on input line 447. on input li
-ne 447.
+Package pdftex.def Info: ./images/logo.png  used on input line 461. on input li
+ne 461.
 Package pdftex.def Info: Requested size: 123.46092pt x 131.49092pt on input lin
-e 447.
- [14
+e 461.
+ [15
 
 pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
 een already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.461 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.461 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.461 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.461 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.461 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.447 \end{document}
+l.461 \end{document}
                     ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 447.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 447.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 461.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 461.
  (./project_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 447.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 447.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 461.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 461.
 Package rerunfilecheck Info: File `project_report.out' has not changed.
-(rerunfilecheck)             Checksum: D4C9B24EC47370009B5EE68E69ED1114;543.
+(rerunfilecheck)             Checksum: 7A1B821CCAA754D228956B5D126B1C48;543.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 461.
  ) 
 Here is how much of TeX's memory you used:
- 30742 strings out of 494931
- 621074 string characters out of 6180963
- 713428 words of memory out of 5000000
- 33584 multiletter control sequences out of 15000+600000
+ 30745 strings out of 494931
+ 621124 string characters out of 6180963
+ 715475 words of memory out of 5000000
+ 33586 multiletter control sequences out of 15000+600000
  534834 words of font info for 38 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,15n,101p,10555b,856s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,15n,101p,10555b,910s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/201
 7/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-d
@@ -1374,10 +1424,10 @@ type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb>
-Output written on project_report.pdf (15 pages, 5667240 bytes).
+Output written on project_report.pdf (16 pages, 5669208 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
  274 words of extra memory for PDF output out of 10000 (max. 10000000)
 

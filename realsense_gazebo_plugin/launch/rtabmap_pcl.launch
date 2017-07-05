@@ -1,3 +1,4 @@
+<!-- launch file to generate point cloud from depth and color image -->
 <launch>
 	<!-- nodelet manager -->
 	<node pkg="nodelet" type="nodelet" args="manager" name="rtabmap_manager" output="screen"/>
