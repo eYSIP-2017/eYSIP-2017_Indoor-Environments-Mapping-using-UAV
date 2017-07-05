@@ -9,3 +9,4 @@ cd ~/catkin_ws/src/IndoorEnvironmentMappingUsingUA/firebird6/scripts
 chmod a+x *.py
 cd ~/catkin_ws/src/IndoorEnvironmentMappingUsingUA/realsense_gazebo_plugin/scripts
 chmod a+x *.py
+echo "export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/home/$USER" >> ~/.bashrc
