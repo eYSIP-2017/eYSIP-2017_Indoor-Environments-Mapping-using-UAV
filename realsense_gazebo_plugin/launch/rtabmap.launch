@@ -28,6 +28,6 @@
 		</node>
 	</group>
 
-	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_gazebo_plugin)/rviz/keyboard_mapping.rviz" required="true" /> -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense_gazebo_plugin)/rviz/keyboard_mapping.rviz" required="true" />
 
 </launch>

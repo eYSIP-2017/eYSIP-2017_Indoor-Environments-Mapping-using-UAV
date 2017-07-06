@@ -1,5 +1,5 @@
 cd ~/catkin_ws/src
-git clone https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV.git
+git clone https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV.git#
 mv eYSIP-2017_Indoor-Environments-Mapping-using-UAV IndoorEnvironmentMappingUsingUAV
 cd ~/catkin_ws/src/IndoorEnvironmentMappingUsingUAV/bash_scripts
 chmod a+x *.sh

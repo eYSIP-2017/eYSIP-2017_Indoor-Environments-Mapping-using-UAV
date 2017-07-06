@@ -24,7 +24,7 @@ gnome-terminal -t 'Server' -x sh -c 'rosrun realsense_gazebo_plugin server.py'
 gnome-terminal -t 'Client' -x sh -c 'rosrun realsense_gazebo_plugin client.py'
 
 # Launch the FBETServer
-# gnome-terminal -t 'FBET' -x sh -c 'roslaunch realsense_gazebo_plugin fbet.launch'
+gnome-terminal -t 'FBET' -x sh -c 'roslaunch realsense_gazebo_plugin fbet.launch'
 
 # Start the keyboard tele-op to control the drone in Gazebo
 gnome-terminal -t 'Keyboard' -x sh -c 'rosrun cvg_sim_gazebo keyboard.py'
