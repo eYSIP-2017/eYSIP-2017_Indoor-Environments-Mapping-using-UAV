@@ -34,7 +34,7 @@ class NavigateServer():
 		error_yaw = goal_y - cur_y
 
 		# loop until errors in translation is less than 0.1m and error in yaw  rotation is less than 0.017
-		while (abs(error_x) > 0.1 or abs(error_y) > 0.1 or abs(error_z) > 0.1 or abs(error_yaw) > 0.017):
+		while (abs(error_x) > 0.1 or abs(error_y) > 0.1 or abs(error_z) > 0.1 or abs(error_yaw) > 0.17):
 			# convert current pose and goal quaternions to euler form
 			(goal_r, goal_p, goal_y) = euler_from_quaternion([goal.waypoint.rotation.x, goal.waypoint.rotation.y, goal.waypoint.rotation.z, goal.waypoint.rotation.w])
 			(cur_r, cur_p, cur_y) = euler_from_quaternion([cur_pose.orientation.x, cur_pose.orientation.y, cur_pose.orientation.z, cur_pose.orientation.w])

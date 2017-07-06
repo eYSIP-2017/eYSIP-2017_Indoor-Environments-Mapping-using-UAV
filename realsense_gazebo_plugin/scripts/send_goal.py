@@ -10,6 +10,9 @@ import tf
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Pose
 from std_msgs.msg import String
+from moveit_msgs.msg import RobotTrajectory
+
+import math
 
 goal = 0
 curr_pose = 0
@@ -44,6 +47,8 @@ def get_odom(data):
 
 # callback to set the goal and send the goal to MoveIt
 def set_goal(data):
+	global goal
+
 	x = data.position.x
 	y = data.position.y
 	z = data.position.z

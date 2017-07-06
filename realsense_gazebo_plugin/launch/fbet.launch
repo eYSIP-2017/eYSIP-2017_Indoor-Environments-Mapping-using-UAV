@@ -1,12 +1,11 @@
 <!-- launch file to launch the autonomous exploration node -->
 <launch>
-	<node name="fbet_node" pkg="autonomous_exploration" type="fbet_node" output="screen">
+	<node name="AutonomousExploration_node" pkg="autonomous_exploration" type="AutonomousExploration_node" output="screen">
 		<remap from="/cloud_in" to="/cloud"/> <!-- input pointcloud topic -->
 		<param name="resolution" type="double" value="0.2"/> <!-- resolution of the generated octomap -->
 		<param name="base_frame_id" type="string" value="quadrotor"/>
 		<param name="pointcloud_min_z" type="double" value="0"/>
 		<param name="pointcloud_max_z" type="double" value="1.0"/>
-		<param name="filter_speckles" type="bool" value="true"/>
 		<param name="cluster_cost" type="double" value="25.0"/> <!-- cost of number of frontier cells in a cluster -->
 		<param name="distance_cost" type="double" value="5.0"/> <!-- cost of distance of the cluster from the current position -->
 		<param name="goal_tolerance" type="double" value="0.5"/>

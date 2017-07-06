@@ -6,6 +6,7 @@ import actionlib
 import roslib
 roslib.load_manifest('realsense_gazebo_plugin')
 
+from trajectory_msgs.msg import *
 from moveit_msgs.msg import *
 from realsense_gazebo_plugin.msg import *
 
