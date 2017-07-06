@@ -157,6 +157,8 @@ In simulation, this problem was solved using an Intel Realsense R200 camera moun
 	\item depth\_image\_proc - This package is a part of the image pipeline package of ROS, and contains nodelets for processing depth images.
 		
 	\item realsense\_gazebo\_plugin	- This package contains the models, drivers and plugins necessary to simulate the behaviour of an Intel Realsense R200 camera in Gazebo7.
+	
+	\item autonomous\_exploration - This package contains the autonomous\_exploration node which performs goal selection
 		
 	\item move\_it - This package plans the path of the drone from it's current location to a goal point.		
 		
@@ -317,7 +319,7 @@ In simulation, this problem was solved using an Intel Realsense R200 camera moun
 	
 	\item /move\_it/launch/moveit.launch - Launch the MoveIt! path planner
 	
-	\item /autonomous\_exploration/src/autonomous\_exploration.cpp - Code to find goals for autonomous navigation	
+	\item /autonomous\_exploration/src/AutonomousExploration.cpp - Code to find goals for autonomous navigation	
 	
 	\item /bash\_scripts/keyboard\_mapping.sh - Bash script to launch all necessary packages required for the mapping process
 	
@@ -391,6 +393,8 @@ In simulation, this problem was solved using an Intel Realsense R200 camera moun
 			\item When the drone goes very close to an obstacle in Gazebo, the camera is able to see through the obstacle and hence pointclouds which would be impossible to generate in the real world are generated in the simulated world.
 			\item Due to the numerous front-end and back-end processes running, the processor(i5 5th Gen Dual-Core) was overloaded. This created a huge delay between the generation of pointclouds and the map building process.
 			\item The MoveIt package was developed for robotic arms. Hence, when using the package for a drone, the planned trajectories are overly complex.
+			
+			\item Due to the physics engine of Gazebo and the load on the processor due to visualization of RViz and Gazebo, Gazebo and RViz might crash multiple times. The only solution to this is to relaunch the process.
 		\end{itemize}
 
 	\item Failures:
