@@ -32,7 +32,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: PointCloud2
 Visualization Manager:
   Class: ""
   Displays:
@@ -73,7 +73,7 @@ Visualization Manager:
       Marker Topic: /frontier_goal_marker
       Name: Marker
       Namespaces:
-        {}
+        map: true
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -123,21 +123,21 @@ Visualization Manager:
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
-      Enabled: false
+      Enabled: true
       Marker Topic: /occupied_cells_vis_array
       Name: MarkerArray
       Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /free_cells_vis_array
       Name: MarkerArray
       Namespaces:
         {}
       Queue Size: 100
-      Value: true
+      Value: false
     - Class: moveit_rviz_plugin/Trajectory
       Color Enabled: false
       Enabled: true
@@ -238,7 +238,7 @@ Visualization Manager:
         Z: 0.139236
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.7098
+      Pitch: 0.6798
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
       Yaw: 3.98175
