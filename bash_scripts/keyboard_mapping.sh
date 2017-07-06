@@ -1,5 +1,5 @@
 # Launchh Gazebo7 and load the simulated world
-gnome-terminal -x sh -c 'roslaunch realsense_gazebo_plugin ardrone_realsense.launch'
+gnome-terminal -x sh -c 'roslaunch realsense_gazebo_plugin house.launch'
 read -p "Press [Enter] key after gazebo launches successfully"
 
 # publish fake depth and color camera info for the simulated cameras

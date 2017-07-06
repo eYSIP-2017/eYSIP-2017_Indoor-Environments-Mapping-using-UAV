@@ -13,7 +13,8 @@
         <!-- Input: Depth camera calibration and metadata. (sensor_msgs/CameraInfo) -->
         <remap from="depth/camera_info" to="$(arg cam_info_subfolder)/depth/camera_info"/> 
         <!-- Input: Rectified depth image. (sensor_msgs/Image) -->
-        <remap from="depth/image_rect" to="$(arg cam_info_subfolder)/depth/image_raw"/>
+        <remap from="depth/image_rect" to="$(arg cam_info_subfolder)/depth/image_raw"/>     
+        <param name="queue_size" type="int" value="30"/>
     </node>
 
     <!-- Publish tf from depth image frame to color image frame -->

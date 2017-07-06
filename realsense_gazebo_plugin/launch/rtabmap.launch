@@ -24,7 +24,8 @@
 			<param name="RGBD/LinearUpdate" type="string" value="0.01"/>
 			<param name="Rtabmap/TimeThr" type="string" value="700"/>
 			<param name="Mem/RehearsalSimilarity" type="string" value="0.45"/>
-			<param name="RGBD/OptimizeFromGraphEnd" type="string" value="true"/>
+			<param name="RGBD/OptimizeFromGraphEnd" type="string" value="true"/>		
+			<param name="queue_size" type="int" value="30"/>
 		</node>
 	</group>
 
