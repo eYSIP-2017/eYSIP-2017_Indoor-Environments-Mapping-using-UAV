@@ -1,6 +1,6 @@
 cd ~/catkin_ws/src
 git clone https://github.com/eYSIP-2017/eYSIP-2017_Indoor-Environments-Mapping-using-UAV.git
-mv eYSIP-2017_Indoor-Environments-Mapping-using-UAV IndoorEnvironmentMappingUsingUA
+mv eYSIP-2017_Indoor-Environments-Mapping-using-UAV IndoorEnvironmentMappingUsingUAV
 cd ~/catkin_ws/src/IndoorEnvironmentMappingUsingUA/bash_scripts
 chmod a+x *.sh
 cd ~/catkin_ws/src/IndoorEnvironmentMappingUsingUA/ardrone_simulator_gazebo7/cvg_sim_gazebo/scripts
